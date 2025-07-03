@@ -12,7 +12,7 @@ long long totalHours(vector<int> &piles,int hourly){
     int n=piles.size();
     long long totalH=0;
     for(int i=0;i<n;i++){
-        totalH=totalH+ceil((double)piles[i]/(double)hourly);
+        totalH=totalH+(piles[i] + hourly - 1) / hourly;
     }
     return totalH;
 }
