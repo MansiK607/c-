@@ -29,12 +29,11 @@ public:
                 q.push({node->right,{x+1,y+1}});
             }
         }
-        
         vector<vector<int>> res;
         for(auto& p:ans){
             vector<int> col;
             for(auto& q:p.second){
-               col.insert(col.end(),q.second.begin(),q.second.end());
+                col.insert(col.end(),q.second.begin(),q.second.end());
             }
             res.push_back(col);
         }
