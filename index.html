@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="A minimal, responsive starter website" />
+    <title>My Website</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="#" class="logo" aria-label="Homepage">MySite</a>
+        <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="primaryNav" aria-label="Toggle navigation">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+        <nav id="primaryNav" class="site-nav" aria-label="Primary">
+          <ul>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a class="btn btn-small" href="#contact">Get Started</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero">
+        <div class="container hero-inner">
+          <div class="hero-content">
+            <h1>Build something great, fast.</h1>
+            <p>A clean, responsive starter you can customize in minutes.</p>
+            <div class="hero-actions">
+              <a class="btn" href="#contact">Get Started</a>
+              <a class="btn btn-ghost" href="#features">Learn More</a>
+            </div>
+          </div>
+          <div class="hero-visual" aria-hidden="true">
+            <svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg" class="shape">
+              <defs>
+                <linearGradient id="grad" x1="0" x2="1" y1="0" y2="1">
+                  <stop offset="0%" stop-color="var(--primary-500)" />
+                  <stop offset="100%" stop-color="var(--accent-500)" />
+                </linearGradient>
+              </defs>
+              <circle cx="80" cy="80" r="60" fill="url(#grad)" opacity="0.9" />
+              <rect x="150" y="40" width="120" height="120" rx="16" fill="var(--primary-200)" opacity="0.6" />
+              <circle cx="210" cy="150" r="30" fill="var(--accent-300)" opacity="0.6" />
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      <section id="features" class="section">
+        <div class="container">
+          <h2 class="section-title">Features</h2>
+          <div class="features-grid">
+            <article class="card">
+              <h3>Responsive by default</h3>
+              <p>Looks great on phones, tablets, and desktops with no extra work.</p>
+            </article>
+            <article class="card">
+              <h3>Fast and lightweight</h3>
+              <p>Only static HTML, CSS, and JS. No build step required.</p>
+            </article>
+            <article class="card">
+              <h3>Easy to customize</h3>
+              <p>Clear structure and variables make it simple to restyle.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section section-alt">
+        <div class="container">
+          <h2 class="section-title">Contact</h2>
+          <p>Have a question or want to get started? Send a message.</p>
+          <form id="contactForm" class="contact-form" novalidate>
+            <div class="form-row">
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" autocomplete="name" required />
+            </div>
+            <div class="form-row">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" autocomplete="email" required />
+            </div>
+            <div class="form-row">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <div class="form-actions">
+              <button type="submit" class="btn">Send</button>
+              <p id="formStatus" class="form-status" role="status" aria-live="polite"></p>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© <span id="year"></span> MySite. All rights reserved.</p>
+        <a href="#" class="back-to-top">Back to top ↑</a>
+      </div>
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
