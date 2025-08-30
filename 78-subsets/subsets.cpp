@@ -1,18 +1,21 @@
 class Solution {
 public:
+void print(int index,int n,vector<int> & nums,vector<int> &ds,vector<vector<int>> &ans){
+    if(index==n){
+        ans.push_back(ds);
+        return;
+    }
+    ds.push_back(nums[index]);
+    print(index+1,n,nums,ds,ans);
+    ds.pop_back();
+    print(index+1,n,nums,ds,ans);
+}
     vector<vector<int>> subsets(vector<int>& nums) {
-        vector<vector<int>> a;
-        int n=nums.size();
-        int subsets=1<<n;
-        for(int i=0;i<subsets;i++){
-            vector<int> b;
-            for(int j=0;j<n;j++){
-                if(i&(1<<j)){
-                    b.push_back(nums[j]);
-                }
-            }
-            a.push_back(b);
-        }
-        return a;
+      int n=nums.size();
+      int index=0;
+      vector<int> ds;
+      vector<vector<int>> ans;
+      print(index,n,nums,ds,ans);
+      return ans;
     }
 };
