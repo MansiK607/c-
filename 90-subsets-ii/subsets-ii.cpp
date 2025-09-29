@@ -1,0 +1,19 @@
+class Solution {
+public:
+void findSubset(int index,vector<int> &arr,vector<int> &ds,vector<vector<int>> &ans){
+        ans.push_back(ds);
+    for(int i=index;i<arr.size();i++){
+        if(i>index && arr[i]==arr[i-1] )continue;
+        ds.push_back(arr[i]);
+        findSubset(i+1,arr,ds,ans);
+        ds.pop_back();
+    }
+}
+    vector<vector<int>> subsetsWithDup(vector<int>& nums) {
+        sort(nums.begin(),nums.end());
+       vector<int> ds;
+       vector<vector<int>> ans;
+       findSubset(0,nums,ds,ans);
+       return ans;
+    }
+};
