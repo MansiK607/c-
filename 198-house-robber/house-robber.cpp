@@ -1,19 +1,20 @@
 class Solution {
 public:
-int houseRobber(int n,vector<int> &nums,vector<int> &dp){
-    dp[0]=nums[0];
+int houseRobber(int n,vector<int> &nums){
+    int prev=nums[0];
+    int prev2=0;
     for(int i=1;i<n;i++){
         int take=nums[i];
-        if(i>1) take=take+dp[i-2];
-        int nottake=dp[i-1];
-        dp[i]=max(take,nottake);
+        if(i>1) take=take+prev2;
+        int nottake=prev;
+        int curri=max(take,nottake);
+        prev2=prev;
+        prev=curri;
     }
-    return dp[n-1];
+    return prev;
 }
     int rob(vector<int>& nums) {
         int n=nums.size();
-        if(n==1) return nums[0];
-        vector<int> dp(n,-1);
-        return houseRobber(n,nums,dp);
+        return houseRobber(n,nums);
     }
 };
